@@ -17,7 +17,7 @@
               "-g",
               "-o",
               "/home/lurenaa/wslCode/test/first.out",
-              "first.c"
+              "./first/first.c"
           ],
           "group": {
               "kind": "build",

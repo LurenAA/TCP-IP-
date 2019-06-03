@@ -16,8 +16,8 @@
           "args": [
               "-g",
               "-o",
-              "/home/lurenaa/wslCode/test/hello_client.out",
-              "./first/hello_client.c"
+              "/home/lurenaa/wslCode/test/getaddrinfo.out",
+              "./test/getaddrinfo.c"
           ],
           "group": {
               "kind": "build",

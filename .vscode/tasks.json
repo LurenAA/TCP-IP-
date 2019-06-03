@@ -16,8 +16,8 @@
           "args": [
               "-g",
               "-o",
-              "/home/lurenaa/wslCode/test/first.out",
-              "./first/first.c"
+              "/home/lurenaa/wslCode/test/hello_client.out",
+              "./first/hello_client.c"
           ],
           "group": {
               "kind": "build",

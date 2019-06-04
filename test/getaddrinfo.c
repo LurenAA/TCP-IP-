@@ -5,6 +5,8 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
 #define NI_MAXHOST 1025
 #define NI_MAXSERV 32
@@ -34,16 +36,18 @@ int main(int argv, const char **argc)
     server[NI_MAXSERV];
   memset(host, NI_MAXHOST, 0);
   memset(server, NI_MAXSERV, 0);
-  while(result->ai_next)
-   result = result->ai_next;
+  struct sockaddr_in nameaddr;
+  memset(&nameaddr, sizeof(nameaddr), 0);
+  nameaddr.sin_family = AF_INET;
+  nameaddr.sin_port = (in_port_t)htons(80);
+  nameaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
   int ss;
-  if ((ss = getnameinfo(result->ai_addr, result->ai_addrlen, host,NI_MAXHOST ,server,NI_MAXSERV, NI_NAMEREQD)) != 0) {
-    printf("host:%s\n,server:%s\n,error:%d\n", host, server,ss);
-    perror(gai_strerror(ss));
+  if ((ss = getnameinfo((struct sockaddr*)&nameaddr, (socklen_t)sizeof(nameaddr), host,NI_MAXHOST ,server,NI_MAXSERV, NI_NAMEREQD)) != 0) {
+    printf("%s\n",gai_strerror(ss));
     exit(EXIT_FAILURE);
   }
 
-  printf("host:%s\n,server:%s\n", host, server);
+  printf("host:%s,server:%s\n", host, server);
 
   freeaddrinfo(result);
   return 0;

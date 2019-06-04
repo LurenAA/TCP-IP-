@@ -16,8 +16,8 @@
           "args": [
               "-g",
               "-o",
-              "/home/lurenaa/wslCode/test/getaddrinfo.out",
-              "./test/getaddrinfo.c"
+              "/home/lurenaa/wslCode/test/waitpid.out",
+              "./test/waitpid.c"
           ],
           "group": {
               "kind": "build",

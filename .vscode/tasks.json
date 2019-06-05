@@ -16,8 +16,8 @@
           "args": [
               "-g",
               "-o",
-              "/home/lurenaa/wslCode/test/waitpid.out",
-              "./test/waitpid.c"
+              "/home/lurenaa/wslCode/test/environ.out",
+              "./test/environ.c"
           ],
           "group": {
               "kind": "build",

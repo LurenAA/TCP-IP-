@@ -16,8 +16,8 @@
           "args": [
               "-g",
               "-o",
-              "/home/lurenaa/wslCode/test/environ.out",
-              "./test/environ.c"
+              "/home/lurenaa/wslCode/test/select_server.out",
+              "./test/select_server.c"
           ],
           "group": {
               "kind": "build",

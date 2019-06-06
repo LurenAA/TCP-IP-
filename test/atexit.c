@@ -1,18 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void a() {
-  printf("abc\n");
+void b()
+{
+  printf("123\n");
+  _Exit(0); // man exit description
 }
 
-int main() 
+void a()
 {
-  for(int i = 0; i < 5; i++) {
-    if(atexit(a)) {
-      perror("atexit");
-      exit(1);
-    }
+  printf("abc\n");
+  if (atexit(b))
+  {
+    perror("atexit");
+    exit(1);
   }
-  
+}
+
+int main()
+{
+  if (atexit(a))
+  {
+    perror("atexit");
+    exit(1);
+  }
+  if (atexit(b))
+  {
+    perror("atexit");
+    exit(1);
+  }
+  if (atexit(b))
+  {
+    perror("atexit");
+    exit(1);
+  }
+
+  _Exit(1); // do not call any functions registered with atexit or on_exit
   return 0;
 }

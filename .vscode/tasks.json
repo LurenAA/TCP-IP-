@@ -16,8 +16,8 @@
           "args": [
               "-g",
               "-o",
-              "/home/lurenaa/wslCode/test/select_server.out",
-              "./test/select_server.c"
+              "/home/lurenaa/wslCode/test/echo_EPLTserv.out",
+              "./test/echo_EPLTserv.c"
           ],
           "group": {
               "kind": "build",
